@@ -1,81 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – ReverseTree™</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Neue', sans-serif;
-      background-color: #e0f7fa;
-      color: #2e3a2b;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt – ReverseTree™</title>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+<style>
+html, body {
+  height:100%;
+  margin:0;
+  font-family:'Comic Neue',sans-serif;
+  display:flex;
+  flex-direction:column;
+  background-color:#e0f7fa;
+  color:#2e3a2b;
+}
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      background-color: rgba(0,121,107,0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+header {
+  position: fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  background-color: rgba(0,121,107,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
 
-    header img {
-      position: absolute;
-      left: 20px;
-      height: 60px;
-    }
+header img {
+  position:absolute;
+  left:20px;
+  height:60px;
+}
 
-    nav {
-      display: flex;
-      gap: 30px;
-    }
+nav { display:flex; gap:20px; }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 15px;
-      background-color: #00796b;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
+nav a {
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 15px;
+  background-color:#00796b;
+  border-radius:8px;
+  transition:0.3s;
+}
 
-    nav a:hover { background-color: #004d40; }
+nav a:hover { background-color:#004d40; }
 
-    main {
-      padding: 120px 20px 60px;
-      display: flex;
-      justify-content: center;
-    }
+main {
+  flex:1;
+  padding:120px 20px 20px;
+  display:flex;
+  justify-content:center;
+}
 
-    .form-box {
-      background-color: #ffffffcc;
-      padding: 30px;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-    }
+.form-box {
+  background-color:#ffffffcc;
+  padding:30px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  box-shadow:2px 2px 15px rgba(0,0,0,0.2);
+}
 
-    .form-box h1 { text-align: center; margin-bottom: 25px; }
+.form-box h1 { text-align:center; margin-bottom:25px; }
 
-    label { display:block; margin-bottom:5px; margin-top:15px; font-weight:bold; }
-    input, textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; }
-    textarea { resize: vertical; max-height:200px; }
+label { display:block; margin-top:15px; margin-bottom:5px; font-weight:bold; }
+input, textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; }
+textarea { resize:vertical; max-height:200px; }
 
-    button { margin-top:25px; width:100%; padding:14px; font-size:1.1em; background-color:#ffeb3b; color:#2e3a2b; border:none; border-radius:12px; cursor:pointer; transition:0.3s; }
-    button:hover { background-color:#ffc107; transform:scale(1.03); }
+button {
+  margin-top:25px;
+  width:100%;
+  padding:14px;
+  font-size:1.1em;
+  background-color:#ffeb3b;
+  color:#2e3a2b;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    footer { background-color:#00796b; color:white; text-align:center; padding:20px; margin-top:40px; }
-  </style>
+button:hover { background-color:#ffc107; transform:scale(1.03); }
+
+footer {
+  background-color:#00796b;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
-
 <body>
 
 <header>
@@ -83,32 +100,29 @@
   <nav>
     <a href="index.html">Startseite</a>
     <a href="baum-retten.html">Baum retten</a>
+    <a href="kontakt.html">Kontakt</a>
     <a href="team.html">Über Uns</a>
   </nav>
 </header>
 
 <main>
-  <div class="form-box">
-    <h1>Kontakt</h1>
+<div class="form-box">
+  <h1>Kontakt</h1>
+  <form action="mailto:jerry.sebi@outlook.com" method="post" enctype="text/plain">
+    <label for="name">Name & Vorname</label>
+    <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
 
-    <form action="mailto:jerry.sebi@outlook.com" method="post" enctype="text/plain">
-      <label for="name">Name & Vorname</label>
-      <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+    <label for="email">E-Mail</label>
+    <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
 
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+    <label for="nachricht">Nachricht (max. 200 Wörter)</label>
+    <textarea id="nachricht" name="nachricht" rows="6" maxlength="200" placeholder="Ihre Nachricht..." required></textarea>
 
-      <label for="nachricht">Nachricht (max. 200 Wörter)</label>
-      <textarea id="nachricht" name="nachricht" rows="6" maxlength="200" placeholder="Ihre Nachricht..." required></textarea>
-
-      <button type="submit">Nachricht senden</button>
-    </form>
-  </div>
+    <button type="submit">Nachricht senden</button>
+  </form>
+</div>
 </main>
 
-<footer>
-  &copy; 2026 ReverseTree™
-</footer>
-
+<footer>&copy; 2026 ReverseTree™</footer>
 </body>
 </html>
