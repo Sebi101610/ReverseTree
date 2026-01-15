@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baum retten – ReverseTree™</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Comic Neue', sans-serif; background-color: #e0f7fa; color: #2e3a2b; }
+    header {
+      display: flex; justify-content: center; align-items: center;
+      padding: 10px 0; background-color: rgba(0,121,107,0.9); position: fixed; top:0; width:100%; z-index:1000;
+    }
+    header img { height: 60px; position: absolute; left: 20px; top:10px; }
+    nav { display: flex; gap: 30px; }
+    nav a { text-decoration: none; color: white; font-weight: bold; padding: 8px 15px; border-radius:8px; background-color:#00796b; transition:0.3s;}
+    nav a:hover { background-color:#004d40; }
+
+    .form-section {
+      padding: 120px 20px 60px 20px; max-width: 500px; margin: 0 auto;
+      background-color: #ffffffcc; border-radius: 20px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    }
+    .form-section h2 { text-align:center; margin-bottom:20px; }
+    label { display:block; margin-top:10px; margin-bottom:5px; }
+    input, select { width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; }
+    button { width:100%; padding:12px; background-color:#00796b; color:white; font-weight:bold; border:none; border-radius:12px; cursor:pointer; transition:0.3s; }
+    button:hover { background-color:#004d40; }
+    footer { background-color:#00796b; color:white; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="team.html">Über Uns</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Baum retten Formular</h2>
+    <form>
+      <label for="anrede">Anrede</label>
+      <select id="anrede" name="anrede" required>
+        <option value="">Bitte wählen</option>
+        <option value="herr">Herr</option>
+        <option value="frau">Frau</option>
+        <option value="divers">Divers</option>
+      </select>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="vorname">Vorname</label>
+      <input type="text" id="vorname" name="vorname" required>
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefon">Telefon</label>
+      <input type="tel" id="telefon" name="telefon">
+
+      <label for="baumart">Baumart</label>
+      <input type="text" id="baumart" name="baumart" required>
+
+      <label for="dringlichkeit">Dringlichkeit</label>
+      <select id="dringlichkeit" name="dringlichkeit" required>
+        <option value="">Bitte wählen</option>
+        <option value="nicht">Nicht dringlich</option>
+        <option value="dringlich">Dringlich</option>
+        <option value="sehr">Sehr dringlich</option>
+        <option value="extrem">Extrem dringlich</option>
+      </select>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2026 ReverseTree™
+  </footer>
+</body>
+</html>
