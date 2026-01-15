@@ -9,42 +9,57 @@
     body {
       margin: 0;
       font-family: 'Comic Neue', sans-serif;
-      color: #2e3a2b;
       scroll-behavior: smooth;
+      color: #2e3a2b;
     }
+    /* Header */
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* Buttons mittig */
       align-items: center;
-      padding: 10px 30px;
+      padding: 10px 0;
       background-color: rgba(0, 121, 107, 0.9);
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 1000;
     }
-    header img { height: 60px; }
+    header img {
+      height: 60px;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+    }
+    nav {
+      display: flex;
+      gap: 30px;
+    }
     nav a {
-      margin-left: 25px;
       text-decoration: none;
       color: white;
       font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background-color: #00796b;
       transition: 0.3s;
     }
-    nav a:hover { color: #ffeb3b; }
+    nav a:hover {
+      background-color: #004d40;
+    }
 
+    /* Hero */
     .hero {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh; /* volle Höhe */
+      height: 100vh;
       background: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      background-size: cover;
+      text-align: center;
       color: white;
       text-shadow: 2px 2px 4px #000;
-      text-align: center;
-      padding-top: 80px; /* Platz für Header */
+      padding-top: 80px;
     }
     .hero h1 { font-size: 3em; margin-bottom: 20px; }
     .hero p { font-size: 1.5em; margin-bottom: 30px; }
@@ -56,12 +71,13 @@
       background-color: #ffeb3b;
       color: #2e3a2b;
       cursor: pointer;
-      transition: 0.3s;
       margin: 10px;
+      transition: 0.3s;
     }
     .hero button:hover { background-color: #ffc107; }
 
-    section { padding: 60px 20px; text-align: center; }
+    /* Sections */
+    section { padding: 80px 20px; text-align: center; }
     .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
     .service-card {
       background-color: #ffffffaa;
@@ -73,31 +89,23 @@
     }
     .service-card:hover { transform: scale(1.05); }
     footer { background-color: #00796b; color: white; text-align: center; padding: 20px; }
-    input, textarea {
-      width: 80%; padding: 10px; margin: 10px 0; border-radius: 10px; border: 1px solid #ccc;
-      font-family: 'Comic Neue', sans-serif;
-    }
-    button.contact-btn {
-      padding: 12px 25px; border: none; border-radius: 12px; background-color: #ffeb3b;
-      color: #2e3a2b; font-weight: bold; cursor: pointer; transition: 0.3s;
-    }
-    button.contact-btn:hover { background-color: #ffc107; }
+
   </style>
 </head>
 <body>
-      <header>
-  <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
-  <nav>
-    <a href="team.html">Über Uns</a> <!-- Link auf die Team-Seite -->
-    <a href="#services">Service</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
-      </header>
+
+  <header>
+    <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
+    <nav>
+      <a href="team.html">Über Uns</a>
+      <a href="baum-retten.html">Baum retten</a>
+      <a href="#services">Service</a>
+    </nav>
+  </header>
 
   <section class="hero" id="home">
     <h1>Wir stellen alles wieder richtig!</h1>
     <p>ReverseTree™ – das einzige Startup, das nachts falsch gepflanzte Bäume wieder korrekt aufstellt.</p>
-    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kontakt</button>
   </section>
 
   <section id="services">
@@ -118,19 +126,12 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <form>
-      <input type="text" placeholder="Name" required><br>
-      <input type="email" placeholder="E-Mail" required><br>
-      <textarea placeholder="Nachricht" rows="5" required></textarea><br>
-      <button type="submit" class="contact-btn">Absenden</button>
-    </form>
-  </section>
-
   <footer>
-    &copy; 2026 ReverseTree™ | Folgen Sie uns auf Social Media 🌳
+    &copy; 2026 ReverseTree™
   </footer>
 
 </body>
 </html>
+
+
+
