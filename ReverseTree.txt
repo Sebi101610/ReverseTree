@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReverseTree™</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', sans-serif;
+      background-color: #e0f7fa;
+      color: #2e3a2b;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 121, 107, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffeb3b;
+    }
+    .hero {
+      text-align: center;
+      padding: 150px 20px 100px 20px;
+      background: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffeb3b;
+      color: #2e3a2b;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      background-color: #ffc107;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .service-card {
+      background-color: #ffffffaa;
+      padding: 30px;
+      border-radius: 20px;
+      width: 250px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: 'Comic Neue', sans-serif;
+    }
+    button.contact-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffeb3b;
+      color: #2e3a2b;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button.contact-btn:hover {
+      background-color: #ffc107;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Service</a>
+      <a href="#about">Über Uns</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Wir stellen alles wieder richtig!</h1>
+    <p>ReverseTree™ – das einzige Startup, das nachts falsch gepflanzte Bäume wieder korrekt aufstellt.</p>
+    <button>Baum retten lassen</button>
+  </section>
+
+  <section id="services">
+    <h2>Unsere Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>180° Baum-Drehung</h3>
+        <p>Wir drehen Ihren Baum um, damit er wieder aufrecht steht – garantiert schwindelfrei.</p>
+      </div>
+      <div class="service-card">
+        <h3>Wurzel-Check</h3>
+        <p>Wir sorgen dafür, dass Ihre Baumwurzeln richtig geerdet sind – Nachtmodus inklusive.</p>
+      </div>
+      <div class="service-card">
+        <h3>Baum-Chakra Alignment</h3>
+        <p>Spirituelle Ausrichtung für Ihre Bäume, damit sie sich rundum wohlfühlen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Über Uns</h2>
+    <p>
+      ReverseTree™ entstand aus der Notwendigkeit, Chaos zu ordnen. Wir sind Nachtaktive, Baumliebhaber und zertifizierte Umdreher.  
+      Unser Motto: „Was nachts schief geht, richten wir morgens wieder gerade.“
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <form>
+      <input type="text" placeholder="Name" required><br>
+      <input type="email" placeholder="E-Mail" required><br>
+      <textarea placeholder="Nachricht" rows="5" required></textarea><br>
+      <button type="submit" class="contact-btn">Absenden</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2026 ReverseTree™ | Folgen Sie uns auf Social Media 🌳
+  </footer>
+
+</body>
+</html>
