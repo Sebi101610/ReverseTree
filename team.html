@@ -4,41 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unser Team – ReverseTree™</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: 'Comic Neue', sans-serif; background-color: #e0f7fa; color: #2e3a2b; }
-    header {
-      display: flex; justify-content: space-between; align-items: center; padding: 10px 30px;
-      background-color: rgba(0, 121, 107, 0.9); position: fixed; top: 0; width: 100%; z-index: 1000;
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', sans-serif;
+      background-color: #e0f7fa;
+      color: #2e3a2b;
     }
-    header img { height: 60px; }
-    nav a { margin-left: 25px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
-    nav a:hover { color: #ffeb3b; }
-    .team-section { padding: 100px 20px 60px 20px; text-align: center; }
-    .member-card { background-color: #ffffffaa; padding: 20px; margin: 20px auto; width: 250px; border-radius: 15px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2); }
-    h2 { margin-bottom: 40px; }
-    footer { background-color: #00796b; color: white; text-align: center; padding: 20px; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      background-color: rgba(0,121,107,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header img {
+      position: absolute;
+      left: 20px;
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      background-color: #00796b;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #004d40;
+    }
+
+    main {
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .member {
+      background-color: white;
+      padding: 25px;
+      border-radius: 20px;
+      width: 250px;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    }
+
+    .member h3 {
+      margin-bottom: 5px;
+    }
+
+    .member p {
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="#team">Team</a>
-    </nav>
-  </header>
 
-  <section class="team-section" id="team">
-    <h2>Unser Team</h2>
-    <div class="member-card"><strong>Sebastian Brockmann</strong><br>CEO</div>
-    <div class="member-card"><strong>Elia Bürkli</strong><br>Manager</div>
-    <div class="member-card"><strong>Nils Zumstein</strong><br>Social Media Manager</div>
-    <div class="member-card"><strong>Levi Hohlenstein</strong><br>Gärtner</div>
-  </section>
+<header>
+  <img src="2c01a8e0-525f-4beb-a283-7751eddd2869.png" alt="ReverseTree Logo">
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="baum-retten.html">Baum retten</a>
+    <a href="team.html">Über Uns</a>
+  </nav>
+</header>
 
-  <footer>
-    &copy; 2026 ReverseTree™ | Folgen Sie uns auf Social Media 🌳
-  </footer>
+<main>
+  <h1>Unser Team</h1>
+
+  <div class="team">
+    <div class="member">
+      <h3>Sebastian Brockmann</h3>
+      <p>CEO</p>
+    </div>
+    <div class="member">
+      <h3>Elia Bürkli</h3>
+      <p>Manager</p>
+    </div>
+    <div class="member">
+      <h3>Nils Zumstein</h3>
+      <p>Social Media Manager</p>
+    </div>
+    <div class="member">
+      <h3>Levi Hohlenstein</h3>
+      <p>Gärtner</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 ReverseTree™
+</footer>
+
 </body>
 </html>
