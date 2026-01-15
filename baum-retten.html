@@ -1,84 +1,150 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baum retten – ReverseTree™</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; font-family: 'Comic Neue', sans-serif; background-color: #e0f7fa; color: #2e3a2b; }
-    header {
-      display: flex; justify-content: center; align-items: center;
-      padding: 10px 0; background-color: rgba(0,121,107,0.9); position: fixed; top:0; width:100%; z-index:1000;
-    }
-    header img { height: 60px; position: absolute; left: 20px; top:10px; }
-    nav { display: flex; gap: 30px; }
-    nav a { text-decoration: none; color: white; font-weight: bold; padding: 8px 15px; border-radius:8px; background-color:#00796b; transition:0.3s;}
-    nav a:hover { background-color:#004d40; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baum retten – ReverseTree™</title>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+<style>
+html, body {
+  height:100%;
+  margin:0;
+  font-family:'Comic Neue',sans-serif;
+  display:flex;
+  flex-direction:column;
+  background-color:#e0f7fa;
+  color:#2e3a2b;
+}
 
-    .form-section {
-      padding: 120px 20px 60px 20px; max-width: 500px; margin: 0 auto;
-      background-color: #ffffffcc; border-radius: 20px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-    }
-    .form-section h2 { text-align:center; margin-bottom:20px; }
-    label { display:block; margin-top:10px; margin-bottom:5px; }
-    input, select { width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; }
-    button { width:100%; padding:12px; background-color:#00796b; color:white; font-weight:bold; border:none; border-radius:12px; cursor:pointer; transition:0.3s; }
-    button:hover { background-color:#004d40; }
-    footer { background-color:#00796b; color:white; text-align:center; padding:20px; margin-top:40px; }
-  </style>
+header {
+  position: fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  background-color: rgba(0,121,107,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+header img {
+  position:absolute;
+  left:20px;
+  height:60px;
+}
+
+nav { display:flex; gap:20px; }
+
+nav a {
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 15px;
+  background-color:#00796b;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+nav a:hover { background-color:#004d40; }
+
+main {
+  flex:1;
+  padding:120px 20px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.form-box {
+  background-color:#ffffffcc;
+  padding:30px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  box-shadow:2px 2px 15px rgba(0,0,0,0.2);
+}
+
+.form-box h1 { text-align:center; margin-bottom:25px; }
+
+label { display:block; margin-top:15px; margin-bottom:5px; font-weight:bold; }
+input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; margin-bottom:10px; }
+textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; font-family:'Comic Neue',sans-serif; resize:vertical; max-height:150px; margin-bottom:10px; }
+
+button {
+  width:100%;
+  padding:14px;
+  font-size:1.1em;
+  background-color:#ffeb3b;
+  color:#2e3a2b;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover { background-color:#ffc107; transform:scale(1.03); }
+
+footer {
+  background-color:#00796b;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="team.html">Über Uns</a>
-       <a href="kontakt.html">Kontakt</a>
-    </nav>
-  </header>
 
-  <section class="form-section">
-    <h2>Baum retten Formular</h2>
-    <form>
-      <label for="anrede">Anrede</label>
-      <select id="anrede" name="anrede" required>
-        <option value="">Bitte wählen</option>
-        <option value="herr">Herr</option>
-        <option value="frau">Frau</option>
-        <option value="divers">Divers</option>
-      </select>
+<header>
+  <img src="2c01a8e0-525f-4beb-a283-7751eddd2869.png" alt="ReverseTree Logo">
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="baum-retten.html">Baum retten</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="team.html">Über Uns</a>
+  </nav>
+</header>
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+<main>
+<div class="form-box">
+<h1>Baum retten</h1>
+<form action="mailto:jerry.sebi@outlook.com" method="post" enctype="text/plain">
+  <label for="anrede">Anrede</label>
+  <select id="anrede" name="anrede" required>
+    <option value="">-- Bitte wählen --</option>
+    <option value="Herr">Herr</option>
+    <option value="Frau">Frau</option>
+    <option value="Divers">Divers</option>
+  </select>
 
-      <label for="vorname">Vorname</label>
-      <input type="text" id="vorname" name="vorname" required>
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
 
-      <label for="email">E-Mail</label>
-      <input type="email" id="email" name="email" required>
+  <label for="vorname">Vorname</label>
+  <input type="text" id="vorname" name="vorname" required>
 
-      <label for="telefon">Telefon</label>
-      <input type="tel" id="telefon" name="telefon">
+  <label for="email">E-Mail</label>
+  <input type="email" id="email" name="email" required>
 
-      <label for="baumart">Baumart</label>
-      <input type="text" id="baumart" name="baumart" required>
+  <label for="telefon">Telefon</label>
+  <input type="tel" id="telefon" name="telefon" required>
 
-      <label for="dringlichkeit">Dringlichkeit</label>
-      <select id="dringlichkeit" name="dringlichkeit" required>
-        <option value="">Bitte wählen</option>
-        <option value="nicht">Nicht dringlich</option>
-        <option value="dringlich">Dringlich</option>
-        <option value="sehr">Sehr dringlich</option>
-        <option value="extrem">Extrem dringlich</option>
-      </select>
+  <label for="baumart">Baumart</label>
+  <input type="text" id="baumart" name="baumart" required>
 
-      <button type="submit">Absenden</button>
-    </form>
-  </section>
+  <label for="dringlichkeit">Dringlichkeit</label>
+  <select id="dringlichkeit" name="dringlichkeit" required>
+    <option value="">-- Bitte wählen --</option>
+    <option value="nicht dringlich">nicht dringlich</option>
+    <option value="dringlich">dringlich</option>
+    <option value="sehr dringlich">sehr dringlich</option>
+    <option value="extrem dringlich">extrem dringlich</option>
+  </select>
 
-  <footer>
-    &copy; 2026 ReverseTree™
-  </footer>
+  <button type="submit">Baum retten</button>
+</form>
+</div>
+</main>
+
+<footer>&copy; 2026 ReverseTree™</footer>
 </body>
-</html
+</html>
