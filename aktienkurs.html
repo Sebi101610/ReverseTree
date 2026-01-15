@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>ReverseTree™ Aktie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f5132, #198754);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.25);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.6em;
+    }
+
+    .price {
+      font-size: 3em;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .change {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    .up {
+      color: #4caf50;
+    }
+
+    .down {
+      color: #ff5252;
+    }
+
+    .info {
+      font-size: 0.9em;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🌳 ReverseTree™ Aktie</h1>
+
+    <div id="price" class="price">CHF 10.00</div>
+    <div id="change" class="change">–</div>
+
+    <div class="info">
+      Kurs aktualisiert alle 5 Stunden<br>
+      (100% seriös 🌲📈)
+    </div>
+  </div>
+
+  <script>
+    const FIVE_HOURS = 5 * 60 * 60 * 1000;
+
+    let price = parseFloat(localStorage.getItem("rt_price")) || 10.00;
+    let lastUpdate = parseInt(localStorage.getItem("rt_last")) || 0;
+
+    function updateDisplay(change = 0) {
+      const priceEl = document.getElementById("price");
+      const changeEl = document.getElementById("change");
+
+      priceEl.textContent = "CHF " + price.toFixed(2);
+
+      if (change !== 0) {
+        const sign = change > 0 ? "+" : "";
+        changeEl.textContent = sign + change.toFixed(2) + " CHF";
+        changeEl.className = "change " + (change > 0 ? "up" : "down");
+      }
+    }
+
+    function randomUpdate() {
+      const change = (Math.random() * 2 - 1); // -1 bis +1 CHF
+      price = Math.max(0.5, price + change);
+
+      localStorage.setItem("rt_price", price.toFixed(2));
+      localStorage.setItem("rt_last", Date.now());
+
+      updateDisplay(change);
+    }
+
+    // Prüfen ob 5 Stunden vorbei sind
+    if (Date.now() - lastUpdate > FIVE_HOURS) {
+      randomUpdate();
+    } else {
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>
