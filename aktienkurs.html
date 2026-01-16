@@ -54,11 +54,11 @@ main {
 
 .price {
   font-size:3em;
-  margin:20px 0;
+  margin:15px 0;
 }
 
 canvas {
-  margin-top:30px;
+  margin-top:25px;
   background:white;
   border-radius:10px;
 }
@@ -68,7 +68,7 @@ canvas {
 <body>
 
 <header>
-  <img src="https://i.ibb.co/Vc35JJjr/Chat-GPT-Image-15-Jan-2026-08-42-57.png" alt="ReverseTree™ Logo">
+  <img src="2c01a8e0-525f-4beb-a283-7751eddd2869.png" alt="Logo">
   <nav>
     <a href="index.html">Start</a>
     <a href="baum-retten.html">Baum retten</a>
@@ -80,10 +80,8 @@ canvas {
 <main>
   <div class="card">
     <h1>🌳 ReverseTree™ Aktie</h1>
-
     <div id="price" class="price">CHF 10.00</div>
-    <p>Kurs aktualisiert alle 5 Stunden</p>
-
+    <p>Automatisches Update alle 60 Sekunden</p>
     <canvas id="chart" width="360" height="180"></canvas>
   </div>
 </main>
@@ -93,31 +91,41 @@ canvas {
 </footer>
 
 <script>
-const FIVE_HOURS = 5 * 60 * 60 * 1000;
+const ONE_MINUTE = 60 * 1000;
 
 let price = parseFloat(localStorage.rt_price) || 10;
 let history = JSON.parse(localStorage.rt_history || "[]");
 let lastUpdate = parseInt(localStorage.rt_last) || 0;
 
-function updatePrice() {
-  const change = Math.random() * 2 - 1;
+function randomUpdate() {
+  const change = (Math.random() * 0.5) * (Math.random() < 0.5 ? -1 : 1);
   price = Math.max(0.5, price + change);
 
   history.push(price);
-  if (history.length > 20) history.shift();
+  if (history.length > 60) history.shift(); // letzte 60 Minuten
 
   localStorage.rt_price = price;
   localStorage.rt_history = JSON.stringify(history);
   localStorage.rt_last = Date.now();
 }
 
-if (Date.now() - lastUpdate > FIVE_HOURS || history.length === 0) {
-  updatePrice();
+function updateDisplay() {
+  document.getElementById("price").innerText = "CHF " + price.toFixed(2);
+  drawChart();
 }
 
-document.getElementById("price").innerText = "CHF " + price.toFixed(2);
+if (Date.now() - lastUpdate > ONE_MINUTE || history.length === 0) {
+  randomUpdate();
+}
+updateDisplay();
 
-// Zeichne Chart
+// 🔁 Live-Update jede Minute
+setInterval(() => {
+  randomUpdate();
+  updateDisplay();
+}, ONE_MINUTE);
+
+// 📈 Chart zeichnen
 const canvas = document.getElementById("chart");
 const ctx = canvas.getContext("2d");
 
@@ -126,25 +134,23 @@ function drawChart() {
 
   const max = Math.max(...history);
   const min = Math.min(...history);
-  const pad = 20;
+  const padding = 20;
 
   ctx.beginPath();
   ctx.strokeStyle = "#2e7d32";
   ctx.lineWidth = 3;
 
   history.forEach((val, i) => {
-    const x = pad + i * ((canvas.width - pad*2) / (history.length-1));
-    const y = canvas.height - pad -
-      ((val - min) / (max - min || 1)) * (canvas.height - pad*2);
+    const x = padding + i * ((canvas.width - padding*2) / (history.length - 1 || 1));
+    const y = canvas.height - padding -
+      ((val - min) / (max - min || 1)) * (canvas.height - padding*2);
 
-    if (i === 0) ctx.moveTo(x,y);
-    else ctx.lineTo(x,y);
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
   });
 
   ctx.stroke();
 }
-
-drawChart();
 </script>
 
 </body>
